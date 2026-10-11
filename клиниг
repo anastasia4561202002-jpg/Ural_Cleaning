@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый Уральский Клининг — Профессиональная уборка</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: { DEFAULT: '#0ea5e9', dark: '#0284c7', light: '#e0f2fe' },
+                        secondary: '#10b981',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .before-after-container {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        .img-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-400 flex items-center justify-center text-white text-xl font-black shadow-md shadow-sky-200">
+                    <a href="#" class="flex items-center shrink-0">
+    <img src="logo.png" alt="Первый Уральский Клининг" class="h-14 sm:h-[72px] w-auto">
+</a>
+                </div>
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-sky-600 to-emerald-600 bg-clip-text text-transparent"></span>
+                    <span class="block text-xs font-semibold tracking-wider text-slate-400 uppercase"></span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#calculator" class="hover:text-sky-500 transition">Калькулятор</a>
+                <a href="#services" class="hover:text-sky-500 transition">Услуги</a>
+                <a href="#before-after" class="hover:text-sky-500 transition">До / После</a>
+                <a href="#advantages" class="hover:text-sky-500 transition">Преимущества</a>
+                <a href="#faq" class="hover:text-sky-500 transition">Вопросы</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <div class="hidden lg:block text-right">
+                    <a href="tel:+73510000000" class="block font-bold text-slate-800 hover:text-sky-600 transition">+7 (922) 634-90-77</a>
+                    <span class="text-xs text-emerald-500 font-medium">● 8:00-22:00</span>
+                </div>
+                <button onclick="openModal('Заказать звонок')" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-sky-500/25 transition transform active:scale-95">
+                    Заказать звонок
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-sky-50/50 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-sky-100 text-sky-700 px-3 py-1.5 rounded-full text-xs font-semibold mb-6">
+                        <i class="fa-solid fa-spray-can"></i>
+                        <span>Идеальная чистота на Урале</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Профессиональная уборка квартир и офисов
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Наведем идеальный порядок за 3 часа с гарантией качества. Используем гипоаллергенную эко-химию и профессиональное оборудование.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#calculator" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-sky-500/30 text-center transition transform active:scale-95">
+                            Рассчитать стоимость
+                        </a>
+                        <button onclick="openModal('Экспресс уборка')" class="bg-white hover:bg-slate-50 text-slate-700 font-bold px-8 py-4 rounded-xl border border-slate-200 text-center transition">
+                            Быстрый заказ
+                        </button>
+                    </div>
+                    <div class="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/80">
+                        <div>
+                            <div class="text-2xl font-bold text-slate-900">50+</div>
+                            <div class="text-xs text-slate-500">Убранных помещений</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-slate-900">4.9 / 5</div>
+                            <div class="text-xs text-slate-500">Рейтинг клиентов</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-slate-900">100%</div>
+                            <div class="text-xs text-slate-500">Гарантия сохранности</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative w-full max-w-[1100px]">
+                    <div class="absolute -top-10 -left-10 w-72 h-72 bg-sky-300 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img
+    src="file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2002:10:12.jpg"
+    alt="Клининг"
+    class="block w-full h-auto"
+>
+                        <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-shield-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Безопасность и страховка</h4>
+                                <p class="text-xs text-slate-600">Все клинеры проверены и несут материальную ответственность.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Онлайн-калькулятор стоимости</h2>
+<p class="text-slate-600">Рассчитайте точную стоимость уборки за 1 минуту со скидкой 10% при заказе с сайта</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-10 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <!-- Type -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Тип уборки</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" onclick="setCleanType('standard', this)" class="type-btn active bg-sky-500 text-white py-2.5 px-4 rounded-xl font-medium text-sm border border-sky-500 transition">Поддерживающая</button>
+                                <button type="button" onclick="setCleanType('general', this)" class="type-btn bg-white text-slate-700 hover:bg-slate-100 py-2.5 px-4 rounded-xl font-medium text-sm border border-slate-200 transition">Генеральная</button>
+                                <button type="button" onclick="setCleanType('repair', this)" class="type-btn bg-white text-slate-700 hover:bg-slate-100 py-2.5 px-4 rounded-xl font-medium text-sm border border-slate-200 transition">После ремонта</button>
+                                <button type="button" onclick="setCleanType('windows', this)" class="type-btn bg-white text-slate-700 hover:bg-slate-100 py-2.5 px-4 rounded-xl font-medium text-sm border border-slate-200 transition">Мойка окон</button>
+                            </div>
+                        </div>
+
+                        <!-- Area Slider -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-sm font-semibold text-slate-700">Площадь помещения</label>
+                                <span class="text-sky-600 font-bold text-lg"><span id="area-val">50</span> м²</span>
+                            </div>
+                            <input type="range" id="area-slider" min="20" max="250" value="50" step="5" oninput="updateCalc()" class="w-full accent-sky-500 h-2 bg-slate-200 rounded-lg cursor-pointer">
+                        </div>
+
+                        <!-- Extra options -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Дополнительные услуги</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer">
+                                    <input type="checkbox" id="ext-fridge" onchange="updateCalc()" class="rounded border-slate-300 text-sky-500 focus:ring-sky-500 w-4 h-4">
+                                    <span>Помыть холодильник (+600 ₽)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer">
+                                    <input type="checkbox" id="ext-oven" onchange="updateCalc()" class="rounded border-slate-300 text-sky-500 focus:ring-sky-500 w-4 h-4">
+                                    <span>Помыть духовку (+500 ₽)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 text-sm text-slate-600 cursor-pointer">
+                                    <input type="checkbox" id="ext-balcony" onchange="updateCalc()" class="rounded border-slate-300 text-sky-500 focus:ring-sky-500 w-4 h-4">
+                                    <span>Уборка балкона (+1000 ₽)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary box -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg mb-4">Итоговая стоимость</h3>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-sm text-slate-500">
+                                    <span>Базовая уборка</span>
+                                    <span id="base-price">2 500 ₽</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-slate-500">
+                                    <span>Скидка с сайта</span>
+                                    <span class="text-emerald-500 font-semibold">-10%</span>
+                                </div>
+                                <div class="border-t border-slate-100 pt-3 flex justify-between items-baseline">
+                                    <span class="font-bold text-slate-800">К оплате:</span>
+                                    <span class="text-3xl font-extrabold text-sky-600" id="total-price">2 250 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="openModal('Заказ по калькулятору')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/20 transition transform active:scale-95">
+                            Заказать за <span id="btn-price">2 250 ₽</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Замените старый section before-after этим блоком вместе со стилями и скриптом. -->
+<style>
+/* Обе фотографии заполняют общую рамку без пустых полей. */
+#before-after [data-ba-slider] {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+/* Слой ПОСЛЕ всегда полный: ползунок меняет только его видимую часть. */
+#before-after [data-ba-after-layer],
+#before-after [data-ba-slider] > div:not([data-ba-handle]) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #e2e8f0;
+}
+
+#before-after img[data-ba-before],
+#before-after img[data-ba-after] {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+#before-after [data-ba-handle] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--split, 50%);
+    width: 4px;
+    z-index: 2;
+}
+</style>
+<section id="before-after" class="py-16 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-3">Результаты нашей работы</h2>
+            <p class="text-slate-600">Перетащите ползунок для сравнения. Кнопки переключают результаты.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <div data-ba-slider
+                 class="rounded-3xl shadow-xl relative overflow-hidden cursor-ew-resize select-none"
+                 style="--split: 50%; touch-action: pan-y;">
+                <!-- Фото ДО -->
+                <img data-ba-before
+                     src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80"
+                     class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+                     alt="До уборки — результат 1" draggable="false">
+
+                <!-- Фото ПОСЛЕ: обрезается слой, размеры фотографии сохраняются -->
+                <div data-ba-after-layer class="absolute inset-0 pointer-events-none"
+                     style="clip-path: inset(0 0 0 var(--split));">
+                    <img data-ba-after
+                         src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1000&q=80"
+                         class="absolute inset-0 w-full h-full object-cover object-center"
+                         alt="После уборки — результат 1" draggable="false">
+                </div>
+
+                <span class="absolute top-4 left-4 bg-slate-900/70 text-white px-3 py-1 rounded-full text-xs font-semibold pointer-events-none">ДО</span>
+                <span class="absolute top-4 right-4 bg-emerald-600/80 text-white px-3 py-1 rounded-full text-xs font-semibold pointer-events-none">ПОСЛЕ</span>
+
+                <!-- Ползунок: можно перетаскивать или управлять стрелками клавиатуры -->
+                <div data-ba-handle role="slider" tabindex="0"
+                     aria-label="Сравнение фотографий до и после уборки"
+                     aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                     aria-valuetext="50% до, 50% после"
+                     class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize focus-visible:ring-4 focus-visible:ring-sky-300"
+                     style="left: var(--split);">
+                    <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-slate-600"
+                         aria-hidden="true">↔</div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 mt-6">
+                <button data-ba-prev type="button"
+                        class="bg-white px-5 py-3 rounded-xl shadow-sm text-sm font-semibold text-slate-700 hover:bg-slate-200">
+                    ← Назад
+                </button>
+                <span data-ba-counter aria-live="polite" aria-atomic="true"
+                      class="text-sm text-slate-600 whitespace-nowrap">1 / 3</span>
+                <button data-ba-next type="button"
+                        class="bg-emerald-600 px-5 py-3 rounded-xl shadow-sm text-sm font-semibold text-white hover:bg-emerald-700">
+                    Далее →
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Удалите старый JavaScript, который управлял прежним ползунком. -->
+<script>
+(() => {
+    const section = document.getElementById("before-after");
+    if (!section) return;
+
+    // Укажите фотографии для каждой пары.
+    const results = [
+        {
+           before: "file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2000:34:48.jpg",
+            after: "file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2000:35:52.jpg"
+        },
+        {
+            before: "file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2000:36:37.jpg", // Ваше второе фото ДО
+            after: "file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2000:36:43.jpg"    // Ваше второе фото ПОСЛЕ
+        },
+        {
+            before: "file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2000:37:42.jpg", // Ваше третье фото ДО
+            after: "file:///Users/anastasia/Library/Containers/ru.keepcoder.Telegram/Data/tmp/IMAGE%202026-10-12%2000:37:35.jpg"    // Ваше третье фото ПОСЛЕ
+        }
+    ];
+
+    const slider = section.querySelector("[data-ba-slider]");
+    const handle = section.querySelector("[data-ba-handle]");
+    const before = section.querySelector("[data-ba-before]");
+    const after = section.querySelector("[data-ba-after]");
+    const counter = section.querySelector("[data-ba-counter]");
+    const positions = results.map(() => 50);
+    let current = 0;
+    let activePointer = null;
+
+    function setPosition(value) {
+        const position = Math.round(Math.max(0, Math.min(100, value)));
+        positions[current] = position;
+        slider.style.setProperty("--split", position + "%");
+        handle.setAttribute("aria-valuenow", String(position));
+        handle.setAttribute("aria-valuetext", position + "% до, " + (100 - position) + "% после");
+    }
+
+    function showResult(index) {
+        current = (index + results.length) % results.length;
+        before.src = results[current].before;
+        after.src = results[current].after;
+        before.alt = "До уборки — результат " + (current + 1);
+        after.alt = "После уборки — результат " + (current + 1);
+        counter.textContent = (current + 1) + " / " + results.length;
+        // При переключении результата ползунок начинается с середины.
+        setPosition(50);
+    }
+
+    section.querySelector("[data-ba-prev]").addEventListener("click", () => showResult(current - 1));
+    section.querySelector("[data-ba-next]").addEventListener("click", () => showResult(current + 1));
+
+    function moveSlider(event) {
+        const rect = slider.getBoundingClientRect();
+        if (rect.width) setPosition((event.clientX - rect.left) / rect.width * 100);
+    }
+
+    slider.addEventListener("pointerdown", event => {
+        if (!event.isPrimary || event.button !== 0) return;
+        activePointer = event.pointerId;
+        slider.setPointerCapture(event.pointerId);
+        handle.focus({ preventScroll: true });
+        moveSlider(event);
+    });
+    slider.addEventListener("pointermove", event => {
+        if (event.pointerId === activePointer) moveSlider(event);
+    });
+    ["pointerup", "pointercancel", "lostpointercapture"].forEach(type => {
+        slider.addEventListener(type, event => {
+            if (event.pointerId === activePointer) activePointer = null;
+        });
+    });
+
+    handle.addEventListener("keydown", event => {
+        const keys = {
+            ArrowLeft: positions[current] - 5,
+            ArrowDown: positions[current] - 5,
+            ArrowRight: positions[current] + 5,
+            ArrowUp: positions[current] + 5,
+            Home: 0,
+            End: 100
+        };
+        if (Object.prototype.hasOwnProperty.call(keys, event.key)) {
+            event.preventDefault();
+            setPosition(keys[event.key]);
+        }
+    });
+
+    showResult(0);
+})();
+</script>
+
+
+    <!-- Services Grid -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Наши клининговые услуги</h2>
+                <p class="text-slate-600">Предлагаем полный комплекс уборочных работ для частных лиц и бизнеса</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-broom"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Поддерживающая уборка</h3>
+                        <p class="text-sm text-slate-600 mb-4">Еженедельное поддержание чистоты и порядка во всех комнатах вашего дома.</p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Удаление пыли с поверхностей</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Мытье полов и плинтусов</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Чистка сантехники</li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+                        <span class="font-bold text-slate-900">от 2 000 ₽</span>
+                        <button onclick="openModal('Поддерживающая уборка')" class="text-sky-600 font-semibold text-sm hover:text-sky-700">Заказать →</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-spray-can"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Генеральная уборка</h3>
+                        <p class="text-sm text-slate-600 mb-4">Глубокая очистка каждого уголка, удаление сложных и въевшихся загрязнений.</p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Мытье кухонной гарнитуры снаружи и внутри</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Дезинфекция санузлов</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Очистка кафеля и плитки</li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+                        <span class="font-bold text-slate-900">от 4 500 ₽</span>
+                        <button onclick="openModal('Генеральная уборка')" class="text-sky-600 font-semibold text-sm hover:text-sky-700">Заказать →</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Уборка после ремонта</h3>
+                        <p class="text-sm text-slate-600 mb-4">Полное удаление строительной пыли, следов краски, затирки и цемента.</p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Промышленный пылесос</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Удаление скотча и клея</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Подготовка к заселению</li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+                        <span class="font-bold text-slate-900">от 6 000 ₽</span>
+                        <button onclick="openModal('Уборка после ремонта')" class="text-sky-600 font-semibold text-sm hover:text-sky-700">Заказать →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="py-16 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Часто задаваемые вопросы</h2>
+            <div class="space-y-4" id="faq-container">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center">
+                        <span>Нужно ли мне присутствовать во время уборки?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Нет, не обязательно. Вы можете оставить ключи нашему клинеру и вернуться в уже чистую квартиру.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center">
+                        <span>Безопасна ли ваша химия для животных и детей?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Да, мы используем только гипоаллергенные профессиональные эко-средства европейского производства, полностью безопасные для детей и домашних питомцев.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-slate-800 flex justify-between items-center">
+                        <span>Что делать, если меня не устроит качество?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition transform"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden text-sm text-slate-600 border-t border-slate-100 pt-3">
+                        Мы предоставляем 100% гарантию качества. Если вы найдете недочеты, наш специалист устранит их абсолютно бесплатно прямо на месте.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <a href="#" class="flex items-center shrink-0">
+    <img src="logo.png" alt="Первый Уральский Клининг" class="h-14 sm:h-[72px] w-auto">
+</a>
+<span class="text-xl font-bold text-white block mb-2">Первый Уральский Клининг</span>
+                <p class="text-sm">Качественный и надежный клининг в вашем городе.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Контакты</h4>
+                <p class="text-sm">Телефон: +7 (922) 634-90-77</p>
+                <p class="text-sm">Email: shekunova_02@mail.ru</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Режим работы</h4>
+                <p class="text-sm">Прием заявок: 10:00-22:00</p>
+                <p class="text-sm">Выезд клинеров: 08:00 – 22:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Form -->
+    <div id="modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2" id="modal-title">Оформить заявку</h3>
+            <p class="text-sm text-slate-500 mb-6">Оставьте контакты, и менеджер перезвонит вам в течение 5 минут.</p>
+
+            <form onsubmit="submitForm(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Ваше имя</label>
+                    <input type="text" required placeholder="Иван" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Номер телефона</label>
+                    <input type="tel" required placeholder="+7 (999) 000-00-00" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+                </div>
+                <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-sky-500/30 transition">
+                    Отправить заявку
+                </button>
+            </form>
+        </div>
+    </div>
+     <!-- JavaScript logic -->
+    <script>
+        // Calculator Logic
+        let currentType = 'standard';
+        const prices = { standard: 50, general: 90, repair: 120, windows: 40 };
+
+        function setCleanType(type, btn) {
+            currentType = type;
+            document.querySelectorAll('.type-btn').forEach(b => {
+                b.classList.remove('bg-sky-500', 'text-white');
+                b.classList.add('bg-white', 'text-slate-700');
+            });
+            btn.classList.add('bg-sky-500', 'text-white');
+            btn.classList.remove('bg-white', 'text-slate-700');
+            updateCalc();
+        }
+
+        function updateCalc() {
+            const area = document.getElementById('area-slider').value;
+            document.getElementById('area-val').innerText = area;
+
+            let base = area * prices[currentType];
+            if (document.getElementById('ext-fridge').checked) base += 600;
+            if (document.getElementById('ext-oven').checked) base += 500;
+            if (document.getElementById('ext-balcony').checked) base += 1000;
+
+            const finalPrice = Math.round(base * 0.9);
+
+            document.getElementById('base-price').innerText = base.toLocaleString() + ' ₽';
+            document.getElementById('total-price').innerText = finalPrice.toLocaleString() + ' ₽';
+            document.getElementById('btn-price').innerText = finalPrice.toLocaleString() + ' ₽';
+        }
+
+        // FAQ Toggle
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Modal Logic
+        function openModal(serviceName) {
+            if(serviceName) document.getElementById('modal-title').innerText = serviceName;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваша заявка успешно отправлена. Менеджер свяжется с вами!');
+            closeModal();
+        }
+
+        // Before/After Slider Drag
+        const container = document.getElementById('slider-container');
+        const handle = document.getElementById('slider-handle');
+        const afterImg = document.getElementById('after-img');
+        const afterImgSrc = document.getElementById('after-img-src');
+
+        function setSliderPos(x) {
+            const rect = container.getBoundingClientRect();
+            let pos = ((x - rect.left) / rect.width) * 100;
+            if (pos < 0) pos = 0;
+            if (pos > 100) pos = 100;
+            handle.style.left = pos + '%';
+            afterImg.style.width = pos + '%';
+            afterImgSrc.style.width = container.offsetWidth + 'px';
+        }
+
+        let isDragging = false;
+        container.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) setSliderPos(e.clientX);
+        });
+
+        // Responsive adjustment for before/after
+        window.addEventListener('resize', () => {
+            afterImgSrc.style.width = container.offsetWidth + 'px';
+        });
+        afterImgSrc.style.width = container.offsetWidth + 'px';
+    </script>
+</body>
+</html>
+
